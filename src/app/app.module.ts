@@ -10,7 +10,7 @@ import { AddformWorkerComponent } from './ui/addform-worker/addform-worker.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, TableWorkersComponent, AddformWorkerComponent],
+  declarations: [AppComponent, TableWorkersComponent, AddformWorkerComponent,],
   imports: [
     BrowserModule,
     FormsModule,

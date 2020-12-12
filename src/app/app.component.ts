@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {
   MyWorker,
   MyWorkersDatabase,
@@ -23,6 +23,26 @@ export class AppComponent {
     let index = this.workers.findIndex((worker) => worker.id === id);
     if (index !== -1) {
       this.workers.splice(index, 1);
+    }
+  }
+
+  onEditById(id: number) {
+    let index = this.workers.findIndex((worker) => worker.id === id);
+    if (index !== -1) {
+      this.workers[index].bool = false;
+    }
+  }
+
+  onSaveById(arr: any) {
+    let index = this.workers.findIndex((worker) => worker.id === arr[0]);
+    if (this.workers[index].name.trim() == '') {
+      this.workers[index].name = 'Default name';
+    }
+    if (this.workers[index].surname.trim() == '') {
+      this.workers[index].surname = 'Default surname';
+    }
+    if (index !== -1) {
+      this.workers[index].bool = true;
     }
   }
 

@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { MyWorkerType, MyWorker } from 'src/app/shared/worker.model';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {MyWorkerType, MyWorker} from 'src/app/shared/worker.model';
 
 @Component({
   selector: 'app-addform-worker',
@@ -14,15 +14,28 @@ export class AddformWorkerComponent implements OnInit {
 
   @Output() addWorker = new EventEmitter<MyWorker>();
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   onAddWorker() {
-    this.addWorker.emit({
-      name: this.name,
-      surname: this.surname,
-      type: this.type,
-    });
+    if ((typeof this.name != 'undefined') && (typeof this.surname != 'undefined')) {
+      if ((this.name.trim() != '') && (this.surname.trim() != '')) {
+        this.addWorker.emit({
+          name: this.name,
+          surname: this.surname,
+          type: this.type,
+          bool: true,
+        });
+      }
+      else {
+        alert('Заполните все поля!');
+      }
+    }
+    else {
+      alert('Заполните все поля!');
+    }
   }
 }

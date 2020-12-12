@@ -9,24 +9,32 @@
     [title]="'Программисты'"
     [workers]="getByType(myWorkerType.programmer)"
     (deleteWorker)="onDeleteById($event)"
+    (editWorker)="onEditById($event)"
+    (saveWorker)="onSaveById($event)"
   ></app-table-workers>
   <app-table-workers
     [title]="'Дизайнеры'"
     [workers]="getByType(myWorkerType.designer)"
     (deleteWorker)="onDeleteById($event)"
+    (editWorker)="onEditById($event)"
+    (saveWorker)="onSaveById($event)"
   ></app-table-workers>
   <app-table-workers
     [title]="'Рекламщики'"
     [workers]="getByType(myWorkerType.copywriter)"
     (deleteWorker)="onDeleteById($event)"
+    (editWorker)="onEditById($event)"
+    (saveWorker)="onSaveById($event)"
   ></app-table-workers>
   <app-table-workers
     [title]="'Менеджеры'"
     [workers]="getByType(myWorkerType.manager)"
     (deleteWorker)="onDeleteById($event)"
+    (editWorker)="onEditById($event)"
+    (saveWorker)="onSaveById($event)"
   ></app-table-workers>
 
-  <hr />
+  <hr/>
   <div class="row">
     <div class="col">
       <div ngbDropdown class="d-inline-block">
@@ -76,7 +84,7 @@
       </div>
     </div>
   </div>
-  <hr />
+  <hr/>
   <div class="row mb-3">
     <mat-spinner></mat-spinner>
   </div>
